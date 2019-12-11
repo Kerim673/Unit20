@@ -1,0 +1,12 @@
+section {display: flex; border: 2px solid black;}
+section > div {height: 96vh;}
+.flexible {display: flex; flex-direction: column;}
+div {border: 2px solid black; height: 48vh; width: 50vw;}
+div > div {display: flex; flex-direction: row;}
+div > div > div {height: 48vh;}
+
+#a {background-color: crimson}
+#b {background-color: gold}
+#c {background-color: orange}
+#d {background-color: green}
+#e {background-color: blue}

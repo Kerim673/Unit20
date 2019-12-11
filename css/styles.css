@@ -1,7 +1,3 @@
-h1, h2 , h3, h4, h5, h6 {color: white;}
-p {color: magenta; font: caption;}
-article {color: mediumspringgreen;}
-body {background-color: black;}
-img {opacity: 0.2;}
-#poo {color: brown;}
-.RanjitsClass {color: yellow;}
+* {
+    box-sizing: border-box;
+}
