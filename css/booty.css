@@ -1,0 +1,4 @@
+header {background-color: grey; font-weight: 600; font-size: 200%; padding: 20px; padding-left: calc(100vw/4);}
+footer {background-color: grey;}
+h1 {font-size: 150%;}
+#ranjit {position: fixed; background-color: hotpink;  bottom: 0%; width: 700px; left: calc((100vw/2) - 350px); height: 120px;}
