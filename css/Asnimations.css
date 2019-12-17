@@ -1,0 +1,103 @@
+@keyframes Flash {
+    0% {
+        transform:scale(0.1);
+        background-color: red;
+    }
+    10%{
+        background-color: orange;
+    }
+    20%{
+        background-color: red;
+    }
+    30%{
+        background-color: orange;
+    }
+    40%{
+        background-color: red;
+    }
+    50%{
+        background-color: orange;
+    }
+    60%{
+        background-color: red;
+    }
+    70%{
+        background-color: orange;
+    }
+    80%{
+        background-color: red;
+    }
+    90%{
+        background-color: orange;
+    }
+    100% {
+        tranform:scale(20);
+        background-color: red;
+    }
+}
+
+@keyframes Walk{
+    0%{
+    }
+    100%{
+        transform:translateX(100vw)
+    }
+}
+
+@keyframes Walk1{
+    0%{
+    }
+    100%{
+        transform:translateX(100vw)
+    }
+}
+@keyframes Walk2{
+    0%{
+        opacity: 1;
+    }
+    49%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    99%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.epicclass{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+#img1{
+    animation: 3s Walk infinite normal linear, Walk2 400ms 200ms infinite linear normal;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+#img2{
+    animation: 3s Walk infinite normal linear, Walk2 400ms infinite linear normal;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+
+#Download {
+    font-size: 1000%;
+    width: 1000px;
+    height: 500px;
+    border-width: 30px;
+    animation: 2s Flash infinite alternate ease-in-out;
+}
+
+body{
+    background-color: white;
+}
