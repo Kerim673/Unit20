@@ -1,5 +1,67 @@
+/*Setting the theme for the page.*/
 body {background-color: rgb(36, 36, 46);}
-h1 {color: rgb(236, 238, 237);}
-header {color: rgb(236,238,237); font-size: 200%; font-weight: bold;}
-p {color: rgb(236, 238, 237);}
-li {color: rgb(236, 238, 237);}
+header {color: rgb(206,208,207); font-size: 250%; font-weight: 500;}
+hr {border: 1px solid rgb(16, 16, 26);}
+h1 {color: rgb(206, 208, 207);}
+h2 {color: rgb(206, 208, 207);}
+p {color: rgb(186, 188, 187);}
+
+.TopBar {background-color: rgb(16, 16, 26); 
+    position: fixed;
+    Z-index:9999;
+    height: 80px; 
+    display: flex; 
+    align-items: center;}
+
+.SideBar {
+    top: 80px;
+    position: fixed;
+    height: 100%;
+    border-right: 4px solid rgb(16, 16, 26); 
+    background-color: rgb(46, 46, 56); 
+    display: flex; 
+    flex-direction: column;}
+
+.PaddingBorderMarginExample {
+    background-color: rgb(30, 60, 30);
+    width: 300px; 
+    border: 20px solid grey; 
+    padding: 50px; 
+    margin: 30px;
+}
+
+.ExampleContainer{
+    display: flex;
+    flex-direction: row;
+    border: solid 1px rgb(16, 16, 26);
+}
+
+/*To help split up the image from the unrelated text below*/
+.InParagraphImage{
+    display: block;
+    margin-bottom: 30px;
+}
+
+.ContentOffset{
+    height: 80px;
+}
+
+/*
+I only plan to use spans in paragraphs to highlight code keywords,
+so this selector should be fine. On more complicated pages, classes
+may be the ideal solution.
+*/
+p > span{ 
+    font-family: monospace;
+    color: skyblue;
+    background-color: RGB(46, 46, 56);
+}
+
+header > header{
+    font-size: 50%;
+    margin:30px;
+}
+
+.SideBar > p:not(:first-of-type){
+    font-weight: 600;
+}
