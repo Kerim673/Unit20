@@ -1,9 +1,9 @@
 /*Setting the theme for the page.*/
 body {background-color: rgb(36, 36, 46);}
-header {color: rgb(206,208,207); font-size: 250%; font-weight: 500;}
+header {color: rgb(236,238,255); font-size: 250%; font-weight: 500;}
 hr {border: 1px solid rgb(16, 16, 26);}
-h1 {color: rgb(206, 208, 207);}
-h2 {color: rgb(206, 208, 207);}
+h1, h2, h3, h4, h5, h6 {color: rgb(236, 238, 255);}
+h3 {font-size: larger;}
 p {color: rgb(186, 188, 187);}
 
 .TopBar {background-color: rgb(16, 16, 26); 
@@ -11,29 +11,33 @@ p {color: rgb(186, 188, 187);}
     Z-index:9999;
     height: 80px; 
     display: flex; 
-    align-items: center;}
+    align-items: center;
+}
 
 .SideBar {
+    z-index: 9998;
     top: 80px;
     position: fixed;
     height: 100%;
     border-right: 4px solid rgb(16, 16, 26); 
     background-color: rgb(46, 46, 56); 
     display: flex; 
-    flex-direction: column;}
+    flex-direction: column;
+}
 
 .PaddingBorderMarginExample {
     background-color: rgb(30, 60, 30);
     width: 300px; 
     border: 20px solid grey; 
     padding: 50px; 
-    margin: 30px;
+    margin: 20px;
 }
 
 .ExampleContainer{
     display: flex;
     flex-direction: row;
-    border: solid 1px rgb(16, 16, 26);
+    border: solid 1px grey;
+    margin-bottom: 10px;
 }
 
 /*To help split up the image from the unrelated text below*/
@@ -57,11 +61,19 @@ p > span{
     background-color: RGB(46, 46, 56);
 }
 
-header > header{
+header > p{
     font-size: 50%;
     margin:30px;
 }
 
 .SideBar > p:not(:first-of-type){
     font-weight: 600;
+}
+
+/*
+Offets the anchors by the height of the title bar so that it wont be covered up. 
+*/
+.OnPageLink {
+    top: -80px;
+    position: relative;
 }

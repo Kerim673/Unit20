@@ -8,19 +8,19 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="../css/AssignmentSite.css" />
-
+        <link href="../../rainbow-master/themes/css/monokai.css" rel="stylesheet" type="text/css">
     </head>
     
     <body>
         <div class="container-fluid">
             <div class="row">
-                <header class="col-12 TopBar">Unit 20<header>Client Side Customisation of Web Pages</header></header>     
+                <header class="col-12 TopBar">Unit 20<p>Client Side Customisation of Web Pages</p></header>     
                 <nav class="col-sm-12 col-md-2 SideBar">
                     <p>Jump To:</p>
-                    <p>- Box Model</p>
-                    <p>- CSS Layout Rules</p>
-                    <p>- CSS Selectors</p>
-                    <p>- Invoking CSS</p>
+                    <p><a href="#BoxModel">- Box Model</a></p>
+                    <p><a href="#CSSLayout">- CSS Layout Rules</a></p>
+                    <p><a href="#CSSSelectors">- CSS Selectors</a></p>
+                    <p><a href="#Invoking">- Invoking CSS</a></p>
                 </nav>
             </div>     
             <div class="row">
@@ -28,34 +28,90 @@
                 <div class="col-sm-12 col-md-10"> <!--Page content goes in here, so that the links are always on the side.-->
                     <div class="ContentOffset"></div> <!-- Blank div to move the content down so it isnt hidden under the header bar.-->
                     
-                    <h1>Box Model</h1>
+                    <h1><a class="OnPageLink" id="BoxModel"></a>Box Model</h1>
                     <p>
                         In CSS, every element has a box around it. These boxes allow the different elements on a page to be arranged and aligned exactly how the designer wants them to be. These boxes have a <span>border</span>, <span>margin</span> and <span>padding</span> which can be used to format and lay them out in relation to the other elements on the page. Below is an example of an element with all 3 of these properties.
                     </p>
                     <div class="ExampleContainer">
                         <p class="PaddingBorderMarginExample">This paragraph has padding, a border and a margin.</p>
-                        <img src="img/BoxModel.PNG" width="365" height="272"/>
+                        <p class="PaddingBorderMarginExample">This paragraph also has padding, a border and a margin.</p>
+                        <!--<img src="img/BoxModel.PNG" width="365" height="272"/>-->
                     </div>
+                    <p>The padding is the distance between the border and the content (in this case, the text), and the border is self-explanatory. The margin is the transparent area around the element that controls how spaced out the elements are. However, unlike the other properties, the top and bottom margins of different elements can overlap. This should be taken into consideration when adjusting the margin size for multiple adjacent elements.</p>
 
                     <hr>
-                    <h1>CSS Layout Rules</h1>
+                    <h1><a class="OnPageLink" id="CSSLayout"></a>CSS Layout Rules</h1>
                     <p>CSS contains a wide range of different properties that can be changed for each element in order for websites to look as intended. Some of the most common ones are explained below.</p>       
                     
                     <h2>Display Values</h2>
                     <p><span>Display</span> is probably the most important property for controlling the layout of a page. For most elements, it is set to <span>block</span> or <span>inline</span> by default. <span>Block</span> elements will start on a new line and will stretch as far as the container is wide. Some of the most common <span>block</span> elements are <span>div</span> and <span>p</span>.</p>
-                    <img class="InParagraphImage" src="img/BlockExample.PNG" width="189" height="60"/>
+                    <pre><code data-language="css">.InParagraphImage{
+    display: block;
+    margin-bottom: 30px;
+}</code></pre>
                     <p><span>Inline</span> elements don’t start a new line, and so can be wrapped inside of other elements such as paragraphs without ruining the flow of it. The <span>span</span> element is a common form of inline element, which has been used extensively on this page in to highlight keywords. <span>Inline-block</span> elements also exist, behaving similarly to inline elements but having the ability to have a width and height property.</p>
-                    <img class="InParagraphImage" src="img/SpanExample.PNG" width="299" height="78"/>
+                    <pre><code data-language="css">p > span{
+    font-family: monospace;
+    color: skyblue;
+    background-color: rgb(46, 46, 56);
+}</code></pre>
                     <p>The last main one is <span>flex</span> and is used for the layout of multiple elements. The navigation bar and Box Model example above both use <span>flex</span>.</p>
-                    <img class="InParagraphImage" src="img/FlexExample.PNG" width="363" height="81"/>
-
+                    <pre><code data-language="css">.TopBar{
+    background-color: rgb(16,16,26);
+    height: 60px;
+    display: flex;
+    align-items: centre;
+}</code></pre>
                     <hr>
-                    <h1>CSS Selectors</h1>
-
+                    <h1><a class="OnPageLink" id="CSSSelectors"></a>CSS Selectors</h1>
+                    <p>Trying to style something without being able to select specifically what you want to style would be almost impossible. For this reason, CSS provides a huge range of selectors, which can be used in conjunction to select whatever is needed. A small handful of these are explained below.</p>
+                    <h2>Simple Selectors</h2>
+                    <h3>Type Selector</h3>
+                    <p>Like the name suggests, this targets all elements of a specific type. For example, I have used it on this page to colour all of the <span>p</span> elements.</p>
+                    <pre><code data-language="css">p {color: rgb(186, 188, 187);}</code></pre>
+                    <h3>ID Selector</h3>
+                    <p>This selector selects the element with a specific ID, which is useful when you only need to apply a style to one thing on the page. As IDs are unique to that element only, it can be used to target one specific element on the page.</p>
+                    <pre><code data-language="css">#TopHeader{background-color: yellow;}</code></pre>
+                    <h3>Class Selector</h3>
+                    <p>The class selector allows you to select any elements of a certain class. As any element can be assigned to any class, this makes it very useful. As well as that, an element can be part of multiple classes if needed.</p>
+                    <pre><code data-language="css">.ContentOffset{height: 80px;}</code></pre>
+                    <h3>Universal Selection</h3>
+                    <p>This selector will select every element on the webpage at once. While it isn’t used very often, it is very useful for resetting box sizes to give a better canvas for designing the page.</p>
+                    <pre><code data-language="css">* {color: green;}</code></pre>
+                    <h2>Combination Selectors</h2>
+                    <p>Combination sectors allow you to select things based on the relationship between the elements.</p>
+                    <h3>Child Combinator</h3>
+                    <p>The Child Combinator targets elements that are the immediate children of the parent element. It is more specific than the Descendant Combinator (explained below), as it will only select children of the first tag.</p>
+                    <pre><code data-language="css">header > p{
+    font-size: 50%;
+    margin:30px;
+}</code></pre>
+                    <h3>Descendant Combinator</h3>
+                    <p>The Descendant Combinator is very similar to the Child Combinator, except that it will select elements that are descendants of the first tag. This includes ones that are not direct children of the first element.</p>
+                    <pre><code data-language="css">p li{background-color: green;}</code></pre>
+                    <h2>Pseudo Classes</h2>
+                    <p>Psuedo Classes are used for targeting certain elements on a page based on attributes and relative position.</p>
+                    <h3>:first-child</h3>
+                    <p>Targets the first child in the desired element.</p>
+                    <pre><code data-language="css">p:first-child{font-size: larger;}</code></pre>
+                    <h3>:nth-child()</h3>
+                    <p>Targets a certain child(stated in the parentheses) in an element.</p>
+                    <pre><code data-language="css">p:nth-child(3){color: red;}</code></pre>
+                    <hr>
+                    <h1><a class="OnPageLink" id="Invoking"></a>Invoking CSS</h1>
+                    <h2>Inline</h2>
+                    <p>Inline CSS is used to style a single HTML element by using the style attribute of the HTML element. One of the uses of this is when testing out different styles. When testing, a separate file isn’t necessary, and having to give every element an ID that you must refer to in the head can become quite tedious. Therefore, styling the element in line with the HTML can be useful. On the other hand, this wouldn’t be suitable when designing a full webpage, as this would lead to messy HTML which will be difficult to maintain.</p>
+                    <h2>Head</h2>
+                    <p>Style directives in the head is used to style a single webpage without needing a separate CSS file. Instead, the CSS is put into a style element in the head. This is commonly used in single web pages or HTML documents, where it isn’t possible to have a separate CSS file, but consistent styles are needed throughout the document. An example of this would be a readme file for some software.</p>                    
+                    <h2>External Files</h2>
+                    <p>CSS in an external file is the third way of invoking CSS. As the name suggests, the CSS is stored in a separate file, and is referenced to in the head of the HTML file. Storing the CSS as a separate file means the same CSS can be used for multiple webpages without it having to be rewritten. This is an advantage for large websites. Having the CSS and HTML in separate file also allows for them to be edited simultaneously by two different people. This is also a benefit, allowing the website to be worked on by a team of people, reducing the amount of time it will take to create. Separating the CSS and HTML from each other will also make them both easier to read, making it more maintainable in the long run.</p>
+                    <hr>
+                </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="JS/rainbow-custom.min.js"></script>
     </body>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </html>
