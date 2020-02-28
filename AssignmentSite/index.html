@@ -7,15 +7,15 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="../css/AssignmentSite.css" />
-        <link href="../../rainbow-master/themes/css/monokai.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/AssignmentSite.css" />
+        <link href="css/monokai.css" rel="stylesheet" type="text/css">
     </head>
     
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid"> <!--container-fluid allows the page to scale as wide as the window, which looks nicer.-->
             <div class="row">
                 <header class="col-12 TopBar">Unit 20<p>Client Side Customisation of Web Pages</p></header>     
-                <nav class="col-sm-12 col-md-2 SideBar">
+                <nav class="col-sm-12 col-md-2 SideBar"> <!--Side bar, including links to the 4 main topics on the page.-->
                     <p>Jump To:</p>
                     <p><a href="#BoxModel">- Box Model</a></p>
                     <p><a href="#CSSLayout">- CSS Layout Rules</a></p>
@@ -35,7 +35,6 @@
                     <div class="ExampleContainer">
                         <p class="PaddingBorderMarginExample">This paragraph has padding, a border and a margin.</p>
                         <p class="PaddingBorderMarginExample">This paragraph also has padding, a border and a margin.</p>
-                        <!--<img src="img/BoxModel.PNG" width="365" height="272"/>-->
                     </div>
                     <p>The padding is the distance between the border and the content (in this case, the text), and the border is self-explanatory. The margin is the transparent area around the element that controls how spaced out the elements are. However, unlike the other properties, the top and bottom margins of different elements can overlap. This should be taken into consideration when adjusting the margin size for multiple adjacent elements.</p>
 
@@ -48,14 +47,14 @@
                     <pre><code data-language="css">.InParagraphImage{
     display: block;
     margin-bottom: 30px;
-}</code></pre>
-                    <p><span>Inline</span> elements don’t start a new line, and so can be wrapped inside of other elements such as paragraphs without ruining the flow of it. The <span>span</span> element is a common form of inline element, which has been used extensively on this page in to highlight keywords. <span>Inline-block</span> elements also exist, behaving similarly to inline elements but having the ability to have a width and height property.</p>
+}</code></pre> <!--Since pre is used, the current indentation of the HTML is ingnored, and has to be written like this. Otherwise, it will look ugly when rendered.-->
+                    <p><span>Inline</span> elements don’t start a new line, and so can be wrapped inside of other elements such as paragraphs without ruining the flow of it. The <span>span</span> element is a common form of inline element, which has been used extensively on this page in to highlight keywords. <span>Inline-block</span> elements also exist, behaving similarly to inline elements but they have both a width and height property.</p>
                     <pre><code data-language="css">p > span{
     font-family: monospace;
     color: skyblue;
     background-color: rgb(46, 46, 56);
 }</code></pre>
-                    <p>The last main one is <span>flex</span> and is used for the layout of multiple elements. The navigation bar and Box Model example above both use <span>flex</span>.</p>
+                    <p>The last main one is <span>flex</span> and is used for the layout of multiple elements. The navigation bar and box model example above both use <span>flex</span>.</p>
                     <pre><code data-language="css">.TopBar{
     background-color: rgb(16,16,26);
     height: 60px;
@@ -64,13 +63,13 @@
 }</code></pre>
                     <hr>
                     <h1><a class="OnPageLink" id="CSSSelectors"></a>CSS Selectors</h1>
-                    <p>Trying to style something without being able to select specifically what you want to style would be almost impossible. For this reason, CSS provides a huge range of selectors, which can be used in conjunction to select whatever is needed. A small handful of these are explained below.</p>
+                    <p>Trying to style something without being able to select specifically what you want would be almost impossible. For this reason, CSS provides a huge range of selectors, which can be used in conjunction to select whatever is needed. A small handful of these are explained below.</p>
                     <h2>Simple Selectors</h2>
                     <h3>Type Selector</h3>
-                    <p>Like the name suggests, this targets all elements of a specific type. For example, I have used it on this page to colour all of the <span>p</span> elements.</p>
+                    <p>Like the name suggests, this targets all elements of a specific type. For example, I used it on this page to colour all of the <span>p</span> elements.</p>
                     <pre><code data-language="css">p {color: rgb(186, 188, 187);}</code></pre>
                     <h3>ID Selector</h3>
-                    <p>This selector selects the element with a specific ID, which is useful when you only need to apply a style to one thing on the page. As IDs are unique to that element only, it can be used to target one specific element on the page.</p>
+                    <p>This selector targets an element with a specific ID, which is useful when you only need to apply a style to one thing on the page. As IDs are unique to that element only, it can only be used to target one specific element on the page.</p>
                     <pre><code data-language="css">#TopHeader{background-color: yellow;}</code></pre>
                     <h3>Class Selector</h3>
                     <p>The class selector allows you to select any elements of a certain class. As any element can be assigned to any class, this makes it very useful. As well as that, an element can be part of multiple classes if needed.</p>
@@ -79,7 +78,7 @@
                     <p>This selector will select every element on the webpage at once. While it isn’t used very often, it is very useful for resetting box sizes to give a better canvas for designing the page.</p>
                     <pre><code data-language="css">* {color: green;}</code></pre>
                     <h2>Combination Selectors</h2>
-                    <p>Combination sectors allow you to select things based on the relationship between the elements.</p>
+                    <p>Combination selesctors allow you to select things based on the relationship between the elements.</p>
                     <h3>Child Combinator</h3>
                     <p>The Child Combinator targets elements that are the immediate children of the parent element. It is more specific than the Descendant Combinator (explained below), as it will only select children of the first tag.</p>
                     <pre><code data-language="css">header > p{
@@ -90,7 +89,7 @@
                     <p>The Descendant Combinator is very similar to the Child Combinator, except that it will select elements that are descendants of the first tag. This includes ones that are not direct children of the first element.</p>
                     <pre><code data-language="css">p li{background-color: green;}</code></pre>
                     <h2>Pseudo Classes</h2>
-                    <p>Psuedo Classes are used for targeting certain elements on a page based on attributes and relative position.</p>
+                    <p>Psuedo Classes are used for targeting certain elements on a page based on attributes and their relative position.</p>
                     <h3>:first-child</h3>
                     <p>Targets the first child in the desired element.</p>
                     <pre><code data-language="css">p:first-child{font-size: larger;}</code></pre>

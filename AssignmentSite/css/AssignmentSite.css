@@ -6,6 +6,10 @@ h1, h2, h3, h4, h5, h6 {color: rgb(236, 238, 255);}
 h3 {font-size: larger;}
 p {color: rgb(186, 188, 187);}
 
+/*
+Has a fixed postion so that it won't scroll with the rest of the page.
+The Z-index is set to 9999 so that it will be on top of every other element on the page.
+*/
 .TopBar {background-color: rgb(16, 16, 26); 
     position: fixed;
     Z-index:9999;
@@ -14,7 +18,12 @@ p {color: rgb(186, 188, 187);}
     align-items: center;
 }
 
+/*
+Similar to the TopBar, but the Z-Index is one below. (Can't be on the same level)
+Since the bar at the top will always be 80px high, its safe to tell the side bar to be 80 pixels lower.
+*/
 .SideBar {
+    padding-top: 10px;
     z-index: 9998;
     top: 80px;
     position: fixed;
@@ -25,6 +34,7 @@ p {color: rgb(186, 188, 187);}
     flex-direction: column;
 }
 
+/*Contains emphasised borders, margin and padding for demonstration.*/
 .PaddingBorderMarginExample {
     background-color: rgb(30, 60, 30);
     width: 300px; 
@@ -46,14 +56,9 @@ p {color: rgb(186, 188, 187);}
     margin-bottom: 30px;
 }
 
-.ContentOffset{
-    height: 80px;
-}
-
 /*
 I only plan to use spans in paragraphs to highlight code keywords,
-so this selector should be fine. On more complicated pages, classes
-may be the ideal solution.
+so this selector should be fine. On more complicated pages, classes are a better choice.
 */
 p > span{ 
     font-family: monospace;
@@ -71,9 +76,16 @@ header > p{
 }
 
 /*
-Offets the anchors by the height of the title bar so that it wont be covered up. 
+Offets the anchors by the height of the title bar so that the h1 won't be covered up by the title bar.
 */
 .OnPageLink {
     top: -80px;
     position: relative;
+}
+
+/*
+Used to offset the content of the page from the title bar.
+*/
+.ContentOffset{
+    height: 80px;
 }
