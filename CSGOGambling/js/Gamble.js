@@ -1,10 +1,4 @@
-function spookText() {
-    let luck = Math.floor(Math.random() * 10);
-    console.log(luck)
-    if (luck === 1) {
-        window.location.replace("http://lukashelp.me");
-    }
-}
+var Money = 0;
 
 function DepositMoney() {
     if (Money === 0) {
@@ -25,14 +19,14 @@ function UpdateMoney(MoneyToUpdate) {
 }
 
 function Roll() {
-    var MoneyToGamble = 0;
-    MoneyToGamble = document.getElementById('#GambleMoney').Value;
+    let MoneyToGamble = 0;
+    MoneyToGamble = document.getElementById("Wag").value;
     if (Money !== 0){
         if (MoneyToGamble > Money){
             DisplayMessage("You can't afford this.");
         }
         else {
-            DoMaths(MoneyToGamble, Money);
+            DoMaths(MoneyToGamble);
         }
     }
     else {
@@ -40,20 +34,17 @@ function Roll() {
     }
 }
 
-function DoMaths(Wager, Money) {
+function DoMaths(Wager) {
     let luck = Math.floor(Math.random() * 10);
-    let NewMoney = 0;
     if (luck < 4) {
         DisplayMessage("You won.");
-        NewMoney = +Money + +Wager;
+        Money = Money + Number(Wager);
     }
     else {
-        NewMoney = +Money - +Wager;
+        Money = Money - Number(Wager);
         DisplayMessage("You lost.");
     }
     
-    console.log(Wager);
-    UpdateMoney(NewMoney);
+    console.log(Wager, Money);
+    UpdateMoney(Money);
 }
-
-let Money = 0;
